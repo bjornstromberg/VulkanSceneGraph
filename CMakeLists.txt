@@ -44,6 +44,8 @@ set(VSG_MAX_INSTRUMENTATION_LEVEL 1 CACHE STRING "Set the instrumentation level 
 set(VSG_SUPPORTS_ShaderCompiler  1 CACHE STRING "Optional shader compiler support, 0 for off, 1 for enabled." )
 if (VSG_SUPPORTS_ShaderCompiler)
     # somehow 15.0.0 is found on alpine-3.21 but it still does not accept it
+    # alpine packages required spirv-tools-dev + glslang-dev but it was silently failing due to first find_package was quiet
+    
     # Try looking for glslang 15 first.
     set(GLSLANG_MIN_VERSION "15" CACHE STRING "glslang 14 is the earliest version that we think installs itself properly on all platforms. Other platforms may be able to use an earlier version")
     find_package(glslang ${GLSLANG_MIN_VERSION} CONFIG)
