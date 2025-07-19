@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.10) # cmake-3.26 complains `drop support for Compatibility with CMake < 3.10 will be removed from a future version of CMake.` and 4.0 has been released.
 
 project(vsg
     VERSION 1.1.11
